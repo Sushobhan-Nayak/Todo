@@ -2,7 +2,7 @@
 
 import { todoType } from "@/types/todoTypes";
 import Button from "../ui/Button";
-import { BiEdit } from "react-icons/bi";
+import { BiSolidEdit } from "react-icons/bi";
 import { useState } from "react";
 import Input from "../ui/Input";
 import Form from "../ui/Form";
@@ -19,7 +19,7 @@ export default function EditTodo({ todo }: { todo: todoType }) {
   };
   return (
     <div className="flex gap-5 items-center">
-      <Button onclick={handleEdit} text={<BiEdit></BiEdit>}></Button>
+      <Button onclick={handleEdit} text={<BiSolidEdit></BiSolidEdit>}></Button>
       {editTodo ? (
         <Form action={edit} onSubmit={handleSubmit}>
           <Input name="inputId" value={todo.id} type="hidden"></Input>

@@ -15,10 +15,11 @@ function Button({ type, text, onclick, actionButton }: buttonProps) {
       <button
         onClick={onclick}
         type={type}
-        className={clsx(
-          actionButton && "bg-orange-700 rounded-full p-2 text-white",
-          "bg-orange-700 text-white px-2"
-        )}
+        className={
+          actionButton === true
+            ? "bg-orange-700 rounded-full text-white p-2"
+            : "bg-green-600 text-white p-2 rounded-sm"
+        }
       >
         {text}
       </button>

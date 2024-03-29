@@ -10,7 +10,7 @@ function Input({ name, type, placeholder, value }: inputProps) {
   return (
     <>
       <input
-        className="w-full p-2 border-gray-200"
+        className="w-full p-2 border-gray-200 rounded-md"
         name={name}
         type={type}
         placeholder={placeholder}

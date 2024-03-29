@@ -6,7 +6,7 @@ import Input from "../ui/Input";
 function AddTodo() {
   return (
     <Form classname="w-1/2 m-auto" action={create}>
-      <div className="flex">
+      <div className="flex gap-2">
         <Input name="input" type="text" placeholder="Add todo ..." />
         <Button type="submit" text="Add" />
       </div>

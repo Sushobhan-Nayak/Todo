@@ -11,7 +11,11 @@ export const DeleteTodo = ({ todo }: { todo: todoType }) => {
   return (
     <Form action={deleteTodo}>
       <Input name="inputId" value={todo.id} type="hidden"></Input>
-      <Button actionButton text={<BsFillTrashFill />} type="submit"></Button>
+      <Button
+        actionButton={true}
+        text={<BsFillTrashFill />}
+        type="submit"
+      ></Button>
     </Form>
   );
 };
