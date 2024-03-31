@@ -10,12 +10,18 @@ function Todo({ todo }: { todo: todoType }) {
   };
   return (
     <div
-      className="w-full flex items-center justify-between bg-white py-3 px-20 rounded-2xl"
+      className="w-3/5 md:w-screen flex items-center justify-center md:justify-between md:space-x-8 bg-white py-3 px-2 rounded-2xl"
       style={todoStyle}
     >
-      <ChangeTodo todo={todo}></ChangeTodo>
-      <span className="text-center font-bold uppercase">{todo.title}</span>
-      <div className="flex  items-center gap-5">
+      <div className="hidden md:block">
+        <ChangeTodo todo={todo}></ChangeTodo>
+      </div>
+      <span className="text-center font-bold uppercase text-sm md:text-xl">
+        {todo.title && todo.title.length > 10
+          ? todo.title?.substring(1, 10) + "..."
+          : todo.title}
+      </span>
+      <div className="md:flex items-center gap-5 hidden">
         <EditTodo todo={todo}></EditTodo>
         <DeleteTodo todo={todo}></DeleteTodo>
       </div>

@@ -1,17 +1,25 @@
 "use server";
 
 import prisma from "@/utils/prisma";
+import { auth } from "@clerk/nextjs";
+import { getAuth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { toast } from "sonner";
 
 export async function create(formData: FormData) {
   const input = formData.get("input")?.toString();
+  const { userId } = auth();
 
+  if (!userId) {
+    return;
+  }
   if (!input?.trim()) {
     return;
   }
   await prisma.todo.create({
     data: {
       title: input,
+      user: userId,
     },
   });
   revalidatePath("/");

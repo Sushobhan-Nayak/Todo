@@ -7,7 +7,6 @@ import Button from "../ui/Button";
 import { changeStatus } from "@/app/actions/todoActions";
 
 function ChangeTodo({ todo }: { todo: todoType }) {
-  
   return (
     <Form action={changeStatus}>
       <Input name="inputId" value={todo.id} type="hidden" />
